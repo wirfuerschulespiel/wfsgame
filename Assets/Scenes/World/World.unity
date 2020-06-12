@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 234181017}
   - component: {fileID: 234181016}
   - component: {fileID: 234181020}
+  - component: {fileID: 234181021}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -304,7 +305,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableAnimals:
-  - {fileID: 69069939796564783, guid: 090d36fa7626d8d48ab60151ff868a13, type: 3}
+  - {fileID: 4161006086668930050, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
+  - {fileID: 7698350537782175001, guid: f9260585cddbd1a4db8da41621cb0776, type: 3}
   waitTime: 180
   startingAnimals: 5
   minRange: 5
@@ -378,6 +380,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef63f1f391704dc4ba905687a739611d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &234181021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234181014}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aebf235b5329f704883b440b76de5dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &289230304

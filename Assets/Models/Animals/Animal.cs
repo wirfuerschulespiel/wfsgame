@@ -8,34 +8,34 @@ public class Animal : MonoBehaviour {
 
 
 	[SerializeField] private float spawnRate = 0.10f;
-	[SerializeField] private float catchRate = 0.10f;
-	[SerializeField] private int attack = 0;
-	[SerializeField] private int defense = 0;
-	[SerializeField] private int hp = 10;
 
+ 	Vector3 touchPosWorld;
+    TouchPhase touchPhase = TouchPhase.Ended;
 
 	private void Start() {
 //		DontDestroyOnLoad(this);
 	}
 
+	private void Update() {
+		if (Input.touchCount > 0 && Input.GetTouch(0).phase == touchPhase) {
+             touchPosWorld = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+ 
+             Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
+             RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
+ 
+             if (hitInformation.collider != null) {
+                GameObject touchedObject = hitInformation.transform.gameObject;
+				Debug.Log("Touched " + touchedObject.transform.name);
+                touchedObject.SendMessage("OnMouseDown");
+
+           }
+             }
+
+         }
+	
+
 	public float SpawnRate {
 		get { return spawnRate; }
-	}
-
-	public float CatchRate {
-		get { return catchRate; }
-	}
-
-	public int Attack {
-		get { return attack; }
-	}
-
-	public int Defense {
-		get { return defense; }
-	}
-
-	public int Hp {
-		get { return hp; }
 	}
 
 	private void OnMouseDown() {
